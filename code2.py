@@ -58,9 +58,6 @@ for l in lines:
                     imwrite('letters2/character'+str(image_count).zfill(4)+'.png' ,img[start:end+1,x+x1+beg:x+x1+col])
                     image_count+=1
 
-                    # imshow('aumn',img[start:end+1,x+x1+beg:x+x1+col])
-                    # waitKey(0)
-
                 col+=1
                 
 imshow('',img2)

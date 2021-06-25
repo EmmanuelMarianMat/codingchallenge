@@ -3,7 +3,6 @@ from cv2 import *
 img = imread('TextDocument.png')
 grey_img = cvtColor(img, COLOR_RGB2GRAY)
 
-#detect borders
 valid_row_start = 0
 while not any(col==255 for col in grey_img[valid_row_start]):
     valid_row_start+=1
@@ -49,16 +48,12 @@ while idx<len(page):
 
     idx+=1
 
-# imshow('page',page)
-# waitKey(0)
 
 image_count = 1
 
 for l in lines:
     (start,end) = l
     page_line_rows = page[start:end+1]
-    # imshow('',page_line_rows)
-    # waitKey(0)
     col = 0
 
     while col<len(page[0]):
