@@ -75,7 +75,7 @@ for l in lines:
                     s+=1
             while not any(col<255 for col in page_line_rows[e,beg:col]):
                     e-=1
-            imwrite('letters/character'+str(image_count)+'.png' ,page_line_rows[s:e+1,beg:col])
+            imwrite('letters/character'+str(image_count).zfill(4)+'.png' ,page_line_rows[s:e+1,beg:col])
             image_count+=1
        
         col+=1
