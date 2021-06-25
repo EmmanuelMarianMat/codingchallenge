@@ -1,6 +1,6 @@
 from cv2 import *
 
-img = imread('1.png')
+img = imread('TextDocument.png')
 grey_img = cvtColor(img, COLOR_RGB2GRAY)
 
 #detect borders
@@ -49,8 +49,8 @@ while idx<len(page):
 
     idx+=1
 
-imshow('page',page)
-waitKey(0)
+# imshow('page',page)
+# waitKey(0)
 
 image_count = 1
 

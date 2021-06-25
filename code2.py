@@ -1,7 +1,7 @@
 
 from cv2 import *
 
-img = imread('1.png')
+img = imread('TextDocument.png')
 grey = cvtColor(img,COLOR_RGB2GRAY)
 
 ret, thresh = cv2.threshold(grey,0,255,cv2.THRESH_OTSU|cv2.THRESH_BINARY_INV)
@@ -34,7 +34,7 @@ for l in lines:
     dilation = dilate(crop,rect_kernel, iterations=1)
     contours, hierarchy = findContours(dilation, RETR_LIST, CHAIN_APPROX_NONE)
 
-    for contour in contours:
+    for contour in contours[::-1]:
         x1,y1,w1,h1 = boundingRect(contour)
         if h1>5 and w1>5:
             rectangle(img2, (x+x1,y+y1), (x+x1+w1,y+y1+h1), (255,0,0),1)
